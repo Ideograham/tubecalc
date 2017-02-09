@@ -98,6 +98,14 @@
 			}
 		},
 		{
+			"file": "/W/tools/notes.md",
+			"settings":
+			{
+				"buffer_size": 187,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "/C/dev/git/tubecalc/code/BendTable.h",
 			"settings":
 			{
@@ -110,7 +118,7 @@
 			"file": "/C/dev/git/tubecalc/code/tubecalc.cpp",
 			"settings":
 			{
-				"buffer_size": 5727,
+				"buffer_size": 7357,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -483,7 +491,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -527,11 +535,55 @@
 						"translation.y": 4628.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "/W/tools/notes.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": false,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_normal",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "/C/dev/git/tubecalc/code/BendTable.h",
 					"semi_transient": false,
 					"settings":
@@ -569,7 +621,7 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 164.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -582,20 +634,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/C/dev/git/tubecalc/code/tubecalc.cpp",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5727,
+						"buffer_size": 7357,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4269,
-								4269
+								647,
+								647
 							]
 						],
 						"settings":
@@ -618,14 +670,14 @@
 								"partial_sequence": "",
 								"register": "\"",
 								"sequence": "",
-								"xpos": 66
+								"xpos": 12
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 2214.0,
+						"translation.y": 3535.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -991,16 +1043,16 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 		"_vintageous_last_buffer_search_command": "vi_octothorp",
 		"_vintageous_last_char_search_command": "vi_t",
-		"_vintageous_last_character_search": "e",
+		"_vintageous_last_character_search": "i",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "C:\\dev\\git\\tubecalc\\code"
+			"_cmdline_cd": "W:\\tools"
 		}
 	},
 	"show_minimap": true,

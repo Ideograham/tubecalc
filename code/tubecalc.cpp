@@ -145,9 +145,8 @@ fillBendTable(bendTable *BendTable, hmm_vec4 *Rows, u32 Count)
 }
 
 internal void
-printBendTable(bendTable *BendTable)
+debugPrintBendTable(bendTable *BendTable)
 {
-    printf("Bend Table Calculator\n");
     printf("%d Rows, %f Total Length\n", BendTable->RowCount, BendTable->CenterlineLength);
 
     for (u32 r=0; r<BendTable->RowCount; r++)
@@ -173,6 +172,51 @@ printBendTable(bendTable *BendTable)
     }
 }
 
+internal void
+printBendTable(bendTable *BendTable)
+{
+    printf("Bend Table Calculator\n");
+    printf("POINT\tX\tY\tZ\tRADIUS\n");
+    for (u32 r=0; r<BendTable->RowCount; r++)
+    {
+        hmm_vec3 *p  = &BendTable->Row[r].Point;
+        printf("%d\t%0.2f\t%0.2f\t%0.2f\t%0.1f\n",
+            r+1, p->X, p->Y, p->Z, BendTable->Row[r].Radius);
+    }
+    printf("-----------------------------------------------------\n");
+    printf("%d Rows \t\t\t\t%f Total Length\n", BendTable->RowCount, BendTable->CenterlineLength);
+
+    printf("\nVECTOR\tX\tY\tZ\tLENGTH\n");
+    for (u32 r=0; r<BendTable->RowCount - 1; r++)
+    {
+        bendTableRowVector *v = &BendTable->Vec[r];
+        printf("%d\t%0.2f\t%0.2f\t%0.2f\t%0.1f\n",
+            r+1, v->Vector.X, v->Vector.Y, v->Vector.Z, v->Length);
+    }
+    printf("\n");
+
+
+    printf("\nPLANES\tBEND_ANGLE\t\tI\tJ\tK\tARC_LEN\t\tPATH_ADJ\n");
+    for (u32 r=0; r<BendTable->RowCount - 2; r++)
+    {
+        bendTablePlane *p = &BendTable->Plane[r];
+        printf("%d\t%0.2f\t\t%0.2f\t%0.2f\t%0.2f\t%0.2f\t\t%0.2f\n",
+            r+1, 
+            ToDegrees(p->BendAngle),
+            p->PlaneNormal.X,
+            p->PlaneNormal.Y,
+            p->PlaneNormal.Z,
+            p->ArcLength,
+            p->PathAdjustment);
+    }
+
+    printf("\nTUBE_ROTATIONS\t\tROTATION_ANGLE\n");
+    for (u32 r=0; r<BendTable->RowCount - 3; r++)
+    {
+        printf("%d\t\t%0.2f\n", r+1, ToDegrees(BendTable->TubeRotation[r].RotationAngle));
+    }
+}
+
 int
 main(int argc, char **args)
 {
@@ -185,7 +229,11 @@ main(int argc, char **args)
             {8.02f, 4.33f,  10.70f, 3.50f},
             {8.02f, 6.89f,  12.18f, 0.0f}
         };
-
+    // hmm_vec4 table_rows[] =
+    //     {   {0.0f,  0.0f,   0.0f,   0.0f},
+    //         {0.0f,  2.51f,  0.0f,   3.50f},
+    //         {1.93f,  4.10f,  0.0f,  0.0f}
+    //     };
     fillBendTable(&BendTable, table_rows, ArrayCount(table_rows));
     printBendTable(&BendTable);
 
