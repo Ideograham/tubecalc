@@ -7,6 +7,9 @@
 #define HANDMADE_MATH_CPP_MODE
 #include "HandmadeMath.h"
 
+#include "ig_util.cpp"
+#include "ig_tokenizer.cpp"
+
 internal void
 printVec3(hmm_vec3 v3, b32 newline = TRUE)
 {
@@ -217,25 +220,93 @@ printBendTable(bendTable *BendTable)
     }
 }
 
+
+internal hmm_vec4*
+getBendTableFromCSV(char *csv)
+{
+    hmm_vec4 *Result = 0;
+    Assert(csv);
+    
+    //Setup Tokenizer
+    tokenizer Tokenizer;
+    Tokenizer.At = csv;
+    
+    //Check for how many lines of input
+    token tok = GetToken(&Tokenizer);
+    u32 newlinesFollowedByNumber = 0;
+    b32 checkNext = FALSE;
+    while (tok.Type != Token_EndOfStream)
+    {
+        if (tok.Type == Token_EndOfLine)
+        {
+            checkNext = TRUE;
+        }
+        else if (checkNext) //don't check next on the end of line token.
+        {
+            if ((tok.Type == Token_Number) || (tok.Type == Token_Minus))
+            {
+                ++newlinesFollowedByNumber;
+            }
+            checkNext = FALSE;
+        }
+        tok = GetToken(&Tokenizer);
+    }
+
+    printf("Found %d lines\n", newlinesFollowedByNumber);
+    
+    return (Result);
+}
+
 int
 main(int argc, char **args)
 {
-
+    char *bendCSV = 0;
     bendTable BendTable = {};
 
-    hmm_vec4 table_rows[] =
-        {   {0.0f,  0.0f,   0.0f,   0.0f},
-            {0.0f,  0.0f,   2.93f,  3.50f},
-            {8.02f, 4.33f,  10.70f, 3.50f},
-            {8.02f, 6.89f,  12.18f, 0.0f}
-        };
-    // hmm_vec4 table_rows[] =
-    //     {   {0.0f,  0.0f,   0.0f,   0.0f},
-    //         {0.0f,  2.51f,  0.0f,   3.50f},
-    //         {1.93f,  4.10f,  0.0f,  0.0f}
-    //     };
-    fillBendTable(&BendTable, table_rows, ArrayCount(table_rows));
-    printBendTable(&BendTable);
+    if(argc == 1)
+    {
+            hmm_vec4 table_rows[] =
+            {   {0.0f,  0.0f,   0.0f,   0.0f},
+                {0.0f,  0.0f,   2.93f,  3.50f},
+                {8.02f, 4.33f,  10.70f, 3.50f},
+                {8.02f, 6.89f,  12.18f, 0.0f}
+            };
+        // hmm_vec4 table_rows[] =
+        //     {   {0.0f,  0.0f,   0.0f,   0.0f},
+        //         {0.0f,  2.51f,  0.0f,   3.50f},
+        //         {1.93f,  4.10f,  0.0f,  0.0f}
+        //     };
+        fillBendTable(&BendTable, table_rows, ArrayCount(table_rows));
+        printBendTable(&BendTable);
+    }
+    else if(argc == 2)
+    {
+        bendCSV = ReadEntireFileIntoMemoryAndNullTerminate(args[1]);
+        if (bendCSV)
+        {
+            printf("Read file .\\%s\n", args[1]);
+            hmm_vec4 *table = 0;
+            table = getBendTableFromCSV(bendCSV);
+            if (table)
+            {
+                fillBendTable(&BendTable, table, ArrayCount(table));
+                printBendTable(&BendTable);
+            }
+            else
+            {
+                printf("Could not parse CSV\n");
+            }
+        }
+        else
+        {
+            printf("Invalid filename %s\n", args[1]);
+        }
+    }
 
+    else
+    {
+        printf("Useage: tubecalc.exe || tubecalc.exe bendtable.csv\n");
+    }
+    
     return 0;
 }

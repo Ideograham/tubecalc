@@ -176,6 +176,7 @@ GetToken(tokenizer *Tokenizer)
         case '{': {Token.Type = Token_OpenBrace;} break;
         case '}': {Token.Type = Token_CloseBrace;} break;
         case ',': {Token.Type = Token_Comma;} break;
+        case '-': {Token.Type = Token_Minus;} break;
                 
         case '"':
         {
@@ -203,76 +204,14 @@ GetToken(tokenizer *Tokenizer)
 
         default:
         {
-
             if (IsEndOfLine(C))
             {
                 Token.Type = Token_EndOfLine;
-            }
-
-#if 0
-            //sql comment - eat till eol
-            if (C == '-' && Tokenizer->At[0] == '-')
-            {
-            	//it IS a minus...but we shouldn't bother with that.
-                //count it as end of line.
-                //Token.Type = Token_Minus;
-                Token.Type = Token_EndOfLine;
-            	while(Tokenizer->At[0] && !IsEndOfLine(Tokenizer->At[0]))
-	            {
-	                ++Tokenizer->At;
-	            }
-                //Token.TextLength = Tokenizer->At - Token.Text;
-	            break;
-        	}
-#endif            
-            if (C == '-')
-            {
-                Token.Type = Token_Minus;
-
-                //SQL Comment - Treat as a new line
-                if (Tokenizer->At[0] == '-')
-                {
-                    Token.Type = Token_EndOfLine;
-                    while(Tokenizer->At[0] && !IsEndOfLine(Tokenizer->At[0]))
-                    {
-                        ++Tokenizer->At;
-                    }
-                    //Token.TextLength = Tokenizer->At - Token.Text;
-                    break;
-                }
                 break;
             }
-
-
             // Start by assuming we have a number, not an identifier.
-            if (IsHex(C))
-            {
-                Token.Type = Token_Number;
-                while(Tokenizer->At[0] && !IsEndOfLine(Tokenizer->At[0]))
-                {
-                    if (IsNumber(Tokenizer->At[0]) || IsHex(Tokenizer->At[0]))
-                    {
-                        ++Tokenizer->At;
-                    }
-                    else if (IsAlpha(Tokenizer->At[0]))
-                    {
-                        Token.Type = Token_Identifier;
-                        ++Tokenizer->At;
-                    }
-                    else
-                    {
-                        break;
-                    }
-                }
-                if (Token.Type == Token_Number && Tokenizer->At[0] == 'x')
-                {
-                    //eat the last x its meaningless.
-                    ++Tokenizer->At;
-                    Token.TextLength--;
-                }
-                Token.TextLength = Tokenizer->At - Token.Text;
-            }
-            else if (IsAlpha(C))
+
+            if (IsAlpha(C))
             {
                 Token.Type = Token_Identifier;
                 while((Tokenizer->At[0] && !IsEndOfLine(Tokenizer->At[0])) && 
@@ -283,26 +222,12 @@ GetToken(tokenizer *Tokenizer)
                 Token.TextLength = Tokenizer->At - Token.Text;
             }
 
-            if (IsNumber(C))
+            else if (IsNumber(C))
             {
 				Token.Type = Token_Number;
 				while(Tokenizer->At[0] && !IsEndOfLine(Tokenizer->At[0]))
                 {
-                    if (Tokenizer->At[0] == ')')
-                    {
-                        Token.Type = Token_PCANDump;
-                        ++Tokenizer->At;
-                        break;
-                    }
-                    else if (IsNumber(Tokenizer->At[0]))
-                    {
-                        ++Tokenizer->At;                        
-                    }
-                    else if (Tokenizer->At[0] == '.')
-                    {
-                        ++Tokenizer->At;
-                    }
-                    else if (IsHex(Tokenizer->At[0]))
+                    if ((Tokenizer->At[0] == '.') || IsNumber(Tokenizer->At[0]))
                     {
                         ++Tokenizer->At;
                     }
