@@ -10,13 +10,36 @@ ReadEntireFileIntoMemoryAndNullTerminate(char *FileName)
     FILE *File = fopen(FileName, "r");
     if(File)
     {
-        fseek(File, 0, SEEK_END);
-        size_t FileSize = ftell(File);
-        fseek(File, 0, SEEK_SET);
+		//Kill UTF Header
+		size_t pos = 0;
+		int ch = 0;
+		while (File)
+		{
+			ch = fgetc(File);
+			if (ch == 0xef ||
+				ch == 0xbb ||
+				ch == 0xbf)
+			{
+				++pos;
+			}
+			else
+			{
+				break;
+			}
+		}
+		
+		fseek(File, 0, SEEK_END);
+		size_t FileSize = ftell(File);
+        fseek(File, pos, SEEK_SET);
 
-        Result = (char *)malloc(FileSize + 1);
-        fread(Result, FileSize, 1, File);
-        Result[FileSize] = 0;
+		size_t allocSize = FileSize + 1 - pos;
+		if (allocSize > 0)
+		{
+			Result = (char *)malloc(allocSize);
+			fread(Result, FileSize - pos, 1, File);
+			Result[FileSize] = 0;
+		}
+        
         
         fclose(File);
     }

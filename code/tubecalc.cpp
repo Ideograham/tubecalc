@@ -222,7 +222,7 @@ printBendTable(bendTable *BendTable)
 
 
 internal hmm_vec4*
-getBendTableFromCSV(char *csv)
+getBendTableFromCSV(char *csv, int *rowcount)
 {
     hmm_vec4 *Result = 0;
     Assert(csv);
@@ -234,7 +234,7 @@ getBendTableFromCSV(char *csv)
     //Check for how many lines of input
     token tok = GetToken(&Tokenizer);
     u32 newlinesFollowedByNumber = 0;
-    b32 checkNext = FALSE;
+    b32 checkNext = TRUE;
     while (tok.Type != Token_EndOfStream)
     {
         if (tok.Type == Token_EndOfLine)
@@ -254,6 +254,45 @@ getBendTableFromCSV(char *csv)
 
     printf("Found %d lines\n", newlinesFollowedByNumber);
     
+    if (newlinesFollowedByNumber >= 3 && newlinesFollowedByNumber < 25)
+    {
+        int valid_rows = 0;
+        Tokenizer.At = csv;
+        hmm_vec4 *table = (hmm_vec4*)malloc(newlinesFollowedByNumber * sizeof(hmm_vec4));
+        
+        for (int r=0; r<newlinesFollowedByNumber; r++)
+        {
+            int rc = 0;
+            tok = GetToken(&Tokenizer);
+            while (tok.Type != Token_EndOfStream && tok.Type != Token_EndOfLine)
+            {
+                if (tok.Type == Token_Number && rc < 4)
+                {
+                    table[r].Elements[rc++] = NumberTokenToFloat(tok); 
+                }
+                else if (rc >= 4)
+                {
+                    printf("too many numbers withthout a breakk\\n");
+                }
+                tok = GetToken(&Tokenizer);
+            }
+            if (rc == 3 || rc == 4)
+            {
+                //printf("Valid Row!\n");
+                ++valid_rows;
+            }
+            printVec3(table[r].XYZ, TRUE);
+
+        }
+        if (valid_rows > 2)
+        {
+            //printf("valid table!\n");
+            Result = table;
+            *rowcount = valid_rows;
+        }
+
+    }
+
     return (Result);
 }
 
@@ -286,10 +325,11 @@ main(int argc, char **args)
         {
             printf("Read file .\\%s\n", args[1]);
             hmm_vec4 *table = 0;
-            table = getBendTableFromCSV(bendCSV);
-            if (table)
+            int rowcount = 0;
+            table = getBendTableFromCSV(bendCSV, &rowcount);
+            if (table && rowcount)
             {
-                fillBendTable(&BendTable, table, ArrayCount(table));
+                fillBendTable(&BendTable, table, rowcount);
                 printBendTable(&BendTable);
             }
             else
