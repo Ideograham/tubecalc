@@ -183,27 +183,27 @@ printBendTable(bendTable *BendTable)
     for (u32 r=0; r<BendTable->RowCount; r++)
     {
         hmm_vec3 *p  = &BendTable->Row[r].Point;
-        printf("%d\t%0.2f\t%0.2f\t%0.2f\t%0.1f\n",
+        printf("%d\t%0.3f\t%0.3f\t%0.3f\t%0.1f\n",
             r+1, p->X, p->Y, p->Z, BendTable->Row[r].Radius);
     }
     printf("-----------------------------------------------------\n");
-    printf("%d Rows \t\t\t\t%f Total Length\n", BendTable->RowCount, BendTable->CenterlineLength);
+    printf("%d Rows \t\t\t\t%0.3f TOTAL LENGTH\n", BendTable->RowCount, BendTable->CenterlineLength);
 
     printf("\nVECTOR\tX\tY\tZ\tLENGTH\n");
     for (u32 r=0; r<BendTable->RowCount - 1; r++)
     {
         bendTableRowVector *v = &BendTable->Vec[r];
-        printf("%d\t%0.2f\t%0.2f\t%0.2f\t%0.1f\n",
+        printf("%d\t%0.3f\t%0.3f\t%0.3f\t%0.3f\n",
             r+1, v->Vector.X, v->Vector.Y, v->Vector.Z, v->Length);
     }
     printf("\n");
 
 
-    printf("\nPLANES\tBEND_ANGLE\t\tI\tJ\tK\tARC_LEN\t\tPATH_ADJ\n");
+    printf("\nPLANES\tBEND_ANGLE\tI\tJ\tK\tARC_LEN\t\tPATH_ADJ\n");
     for (u32 r=0; r<BendTable->RowCount - 2; r++)
     {
         bendTablePlane *p = &BendTable->Plane[r];
-        printf("%d\t%0.2f\t\t%0.2f\t%0.2f\t%0.2f\t%0.2f\t\t%0.2f\n",
+        printf("%d\t%0.1f\t\t%0.3f\t%0.3f\t%0.3f\t%0.3f\t\t%0.3f\n",
             r+1, 
             ToDegrees(p->BendAngle),
             p->PlaneNormal.X,
@@ -213,10 +213,10 @@ printBendTable(bendTable *BendTable)
             p->PathAdjustment);
     }
 
-    printf("\nTUBE_ROTATIONS\t\tROTATION_ANGLE\n");
+    printf("\nTUBE_ROTATIONS\tROTATION_ANGLE\n");
     for (u32 r=0; r<BendTable->RowCount - 3; r++)
     {
-        printf("%d\t\t%0.2f\n", r+1, ToDegrees(BendTable->TubeRotation[r].RotationAngle));
+        printf("%d\t\t%0.1f\n", r+1, ToDegrees(BendTable->TubeRotation[r].RotationAngle));
     }
 }
 
@@ -252,7 +252,7 @@ getBendTableFromCSV(char *csv, int *rowcount)
         tok = GetToken(&Tokenizer);
     }
 
-    printf("Found %d lines\n", newlinesFollowedByNumber);
+    //printf("Found %d lines\n", newlinesFollowedByNumber);
     
     if (newlinesFollowedByNumber >= 3 && newlinesFollowedByNumber < 25)
     {
@@ -281,7 +281,7 @@ getBendTableFromCSV(char *csv, int *rowcount)
                 //printf("Valid Row!\n");
                 ++valid_rows;
             }
-            printVec3(table[r].XYZ, TRUE);
+            //printVec3(table[r].XYZ, TRUE);
 
         }
         if (valid_rows > 2)
@@ -306,15 +306,11 @@ main(int argc, char **args)
     {
             hmm_vec4 table_rows[] =
             {   {0.0f,  0.0f,   0.0f,   0.0f},
-                {0.0f,  0.0f,   2.93f,  3.50f},
-                {8.02f, 4.33f,  10.70f, 3.50f},
+                {0.0f,  0.0f,   2.93f,  4.00f},
+                {8.02f, 4.33f,  10.70f, 4.00f},
                 {8.02f, 6.89f,  12.18f, 0.0f}
             };
-        // hmm_vec4 table_rows[] =
-        //     {   {0.0f,  0.0f,   0.0f,   0.0f},
-        //         {0.0f,  2.51f,  0.0f,   3.50f},
-        //         {1.93f,  4.10f,  0.0f,  0.0f}
-        //     };
+        
         fillBendTable(&BendTable, table_rows, ArrayCount(table_rows));
         printBendTable(&BendTable);
     }
@@ -323,7 +319,7 @@ main(int argc, char **args)
         bendCSV = ReadEntireFileIntoMemoryAndNullTerminate(args[1]);
         if (bendCSV)
         {
-            printf("Read file .\\%s\n", args[1]);
+            //printf("Read file .\\%s\n", args[1]);
             hmm_vec4 *table = 0;
             int rowcount = 0;
             table = getBendTableFromCSV(bendCSV, &rowcount);

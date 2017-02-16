@@ -130,7 +130,16 @@
 			"file": "/C/dev/git/tubecalc/code/tubecalc.cpp",
 			"settings":
 			{
-				"buffer_size": 10323,
+				"buffer_size": 10134,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/W/git/tubecalc/build/pt36-4-0058.csv",
+			"settings":
+			{
+				"buffer_size": 28,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -222,6 +231,8 @@
 	],
 	"file_history":
 	[
+		"/W/git/tubecalc/build/wa34-4-0018.csv",
+		"/W/git/tubecalc/build/pt34-44-0065.csv",
 		"/C/dev/git/tubecalc/build/table.csv",
 		"/W/standard_job/JobDump/JobDump/bin/Debug/Jobs/PARAMOUNTENGINEMODULE1-7.json",
 		"/W/tools/notes.md",
@@ -347,9 +358,7 @@
 		"/C/dev/Sequoia/Sequoia/Models/DrawingModel.cs",
 		"/C/dev/Sequoia/Sequoia/Models/RefactoredDrawingModel.cs",
 		"//WPPBK-FS1/Users$/jgasper/Desktop/mw_fan_for_reversing.xml",
-		"/C/dev/Aspen/Sequoia/pdm_full_query_on_partnumber.sql",
-		"//WPPBK-FS1/Users$/jgasper/Desktop/import.tab",
-		"/C/dev/Sequoia/SJ_List.sql"
+		"/C/dev/Aspen/Sequoia/pdm_full_query_on_partnumber.sql"
 	],
 	"find":
 	{
@@ -367,6 +376,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"printVec3",
+			"getBendTableFromCSV",
 			"Magnitude",
 			"struct",
 			"degrees",
@@ -568,10 +579,10 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 5799.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -622,7 +633,7 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -631,21 +642,111 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10323,
+						"buffer_size": 10134,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8741,
-								8741
+								8798,
+								8798
 							]
 						],
 						"settings":
 						{
 							"highlight_line": true,
 							"history_list_is_closing": true,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"_vintageous_non_interactive": false,
+								"_vintageous_processing_notation": false,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 12
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 4419.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/W/git/tubecalc/build/pt36-4-0058.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 28,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28,
+								17
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"vintage":
+							{
+								"_vintageous_glue_until_normal_mode": true,
+								"action": null,
+								"action_count": "",
+								"mode": "mode_insert",
+								"motion": null,
+								"motion_count": "",
+								"must_capture_register_name": false,
+								"normal_insert_count": "1",
+								"partial_sequence": "",
+								"register": "\"",
+								"sequence": "",
+								"xpos": 0
+							}
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/dev/git/tubecalc/code/ig_util.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1069,
+								1069
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/C++/C++.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true,
@@ -660,50 +761,6 @@
 								"motion": null,
 								"motion_count": "",
 								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 13
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 4314.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/dev/git/tubecalc/code/ig_util.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								698,
-								698
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
 								"partial_sequence": "",
 								"register": "\"",
 								"sequence": "",
@@ -711,14 +768,14 @@
 							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1134.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/C/dev/git/tubecalc/code/ig_tokenizer.cpp",
 					"semi_transient": false,
 					"settings":
@@ -759,7 +816,7 @@
 						"translation.y": 4140.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -793,7 +850,7 @@
 		"cols":
 		[
 			0.0,
-			0.279069767442,
+			0.357751677328,
 			1.0
 		],
 		"rows":
@@ -1141,8 +1198,8 @@
 	"settings":
 	{
 		"_vintageous_last_buffer_search_command": "vi_octothorp",
-		"_vintageous_last_char_search_command": "vi_t",
-		"_vintageous_last_character_search": "*",
+		"_vintageous_last_char_search_command": "vi_big_t",
+		"_vintageous_last_character_search": "i",
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
