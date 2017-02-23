@@ -36,37 +36,6 @@ ToDegrees(float Radians)
     return (Result);
 }
 
-
-internal void
-flareDemo()
-{
-   hmm_vec3 flare[3] =
-        {   {-7.104f,  -8.021f,   -11.599f},
-            {-4.571f,  -8.021f,   -10.136f},
-            {-3.627f,  -6.365f,   -8.559f} 
-        };
-    
-    hmm_vec3 diff[2];
-    diff[0] = flare[1] - flare[0];
-    diff[1] = flare[2] - flare[1];
-
-    printVec3(diff[0]);
-    printVec3(diff[1]);
-
-    r32 dot = HMM_Dot(diff[0], diff[1]);
-
-    r32 theta = HMM_ACosF(dot / (HMM_Length(diff[0]) * HMM_Length(diff[1])));
-
-    hmm_vec3 plane = HMM_Normalize(HMM_Cross(diff[0], diff[1]));
-
-    printf("v1: %f; v2: %f; angle: %f\n", 
-        HMM_Length(diff[0]), 
-        HMM_Length(diff[1]), 
-        ToDegrees(calcBendAngle(diff[0], diff[1])));
-
-    printVec3(plane);
-}
-
 internal void
 fillBendTable(bendTable *BendTable, hmm_vec4 *Rows, u32 Count)
 {

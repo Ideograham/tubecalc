@@ -108,56 +108,11 @@
 	"buffers":
 	[
 		{
-			"file": "/C/dev/git/tubecalc/code/HandmadeMath.h",
+			"file": "/W/scratch/2017+Calendar+Year+NA+Accessory+Pricing+(Rev+7).tab",
 			"settings":
 			{
-				"buffer_size": 58861,
-				"encoding": "UTF-8",
-				"line_ending": "Windows",
-				"name": "/*"
-			}
-		},
-		{
-			"file": "/C/dev/git/tubecalc/code/BendTable.h",
-			"settings":
-			{
-				"buffer_size": 596,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/dev/git/tubecalc/code/tubecalc.cpp",
-			"settings":
-			{
-				"buffer_size": 10134,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/W/git/tubecalc/build/pt36-4-0058.csv",
-			"settings":
-			{
-				"buffer_size": 28,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/dev/git/tubecalc/code/ig_util.cpp",
-			"settings":
-			{
-				"buffer_size": 3626,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/dev/git/tubecalc/code/ig_tokenizer.cpp",
-			"settings":
-			{
-				"buffer_size": 7223,
-				"encoding": "UTF-8",
+				"buffer_size": 48836,
+				"encoding": "Western (Windows 1252)",
 				"line_ending": "Windows"
 			}
 		}
@@ -231,15 +186,27 @@
 	],
 	"file_history":
 	[
+		"/C/dev/git/tubecalc/code/ig_tokenizer.cpp",
+		"/C/dev/git/tubecalc/code/BendTable.h",
+		"/C/dev/git/tubecalc/code/HandmadeMath.h",
+		"/W/standard_job/JobDump/JobDump/Program.cs",
+		"/W/scratch/Set-ScreenResolution.ps1",
+		"/W/scratch/scratch.py",
+		"/C/dev/git/tubecalc/code/ig_util.cpp",
+		"/W/git/tubecalc/build/pt36-4-0058.csv",
+		"/C/dev/git/tubecalc/code/tubecalc.cpp",
+		"/W/git/tubecalc/code/tubecalc.cpp",
+		"/W/url_downloader/ud.py",
+		"/W/tdms/code/removeDots.cpp",
+		"/W/std_job.cs",
+		"/W/url_downloader/pip_update_all.py",
 		"/W/git/tubecalc/build/wa34-4-0018.csv",
 		"/W/git/tubecalc/build/pt34-44-0065.csv",
 		"/C/dev/git/tubecalc/build/table.csv",
 		"/W/standard_job/JobDump/JobDump/bin/Debug/Jobs/PARAMOUNTENGINEMODULE1-7.json",
 		"/W/tools/notes.md",
 		"/W/git/tubecalc/build/tc.txt",
-		"/C/dev/git/tubecalc/code/tubecalc.cpp",
 		"/C/dev/git/tubecalc/code/ig_base.h",
-		"/C/dev/git/tubecalc/code/ig_util.cpp",
 		"/C/dev/git/tubecalc/tubecalc.cpp",
 		"/W/git/tubecalc/code/build.bat",
 		"/W/standard_job/SJMod/SJMod/bin/Debug/SJMod.exe.config",
@@ -266,7 +233,6 @@
 		"/C/dev/standard_job/JobDump/JobDump/bin/Debug/Jobs/6068HF285 156 HP AirOFan.json",
 		"//WPPBK-FS1/Users$/jgasper/Desktop/industrial_dealer.csv",
 		"/W/scratch/ssr.ps1",
-		"/W/scratch/scratch.py",
 		"/W/scratch/__pycache__/scratch.cpython-35.pyc",
 		"/C/dev/can_parser/General/old_data/coe.trc",
 		"/C/Users/jgasper/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
@@ -289,7 +255,6 @@
 		"/C/cmder/README.md",
 		"/C/Users/jgasper/.enstaller4rc",
 		"/c/Peak/PCAN-Basic API/Samples/Python 2.6/PCANBasic.py",
-		"/W/url_downloader/ud.py",
 		"/C/dev/todo.txt",
 		"/W/can_parser/General/weissaea.txt",
 		"/W/can_parser/General/tsc.py",
@@ -348,17 +313,7 @@
 		"/C/dev/Sequoia/Sequoia/Views/Aggregate/WorkOrderPartsAggregate.cshtml",
 		"/C/dev/backup/ContentBk/reports.css",
 		"/C/Users/jgasper/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/dev/Sequoia/Sequoia/Views/Aggregate/Ag.cshtml",
-		"/C/dev/Sequoia/Sequoia/ContentBk/aggregate.css",
-		"/C/dev/Sequoia/.gitattributes",
-		"/C/dev/Sequoia/Sequoia/Content/Site.css",
-		"/C/dev/Sequoia/Sequoia/Models/PurchaseOrderDetails.cs",
-		"/C/dev/Sequoia/Sequoia/Views/PurchaseOrder/Index.cshtml",
-		"/C/dev/Sequoia/Sequoia/Controllers/PurchaseOrderController.cs",
-		"/C/dev/Sequoia/Sequoia/Models/DrawingModel.cs",
-		"/C/dev/Sequoia/Sequoia/Models/RefactoredDrawingModel.cs",
-		"//WPPBK-FS1/Users$/jgasper/Desktop/mw_fan_for_reversing.xml",
-		"/C/dev/Aspen/Sequoia/pdm_full_query_on_partnumber.sql"
+		"/C/dev/Sequoia/Sequoia/Views/Aggregate/Ag.cshtml"
 	],
 	"find":
 	{
@@ -540,166 +495,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/C/dev/git/tubecalc/code/HandmadeMath.h",
+					"file": "/W/scratch/2017+Calendar+Year+NA+Accessory+Pricing+(Rev+7).tab",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 58861,
+						"buffer_size": 48836,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								32656,
-								32656
-							]
-						],
-						"settings":
-						{
-							"auto_name": "/*",
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"_vintageous_non_interactive": false,
-								"_vintageous_processing_notation": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 0
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/dev/git/tubecalc/code/BendTable.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 596,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								333,
-								333
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 22
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 2,
-					"file": "/C/dev/git/tubecalc/code/tubecalc.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10134,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8798,
-								8798
-							]
-						],
-						"settings":
-						{
-							"highlight_line": true,
-							"history_list_is_closing": true,
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": true,
-								"_vintageous_non_interactive": false,
-								"_vintageous_processing_notation": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_insert",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 12
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 4419.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/W/git/tubecalc/build/pt36-4-0058.csv",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 28,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								28,
-								17
+								0,
+								0
 							]
 						],
 						"settings":
@@ -707,118 +515,30 @@
 							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"vintage":
 							{
-								"_vintageous_glue_until_normal_mode": true,
 								"action": null,
 								"action_count": "",
-								"mode": "mode_insert",
+								"mode": "mode_normal",
 								"motion": null,
 								"motion_count": "",
 								"must_capture_register_name": false,
-								"normal_insert_count": "1",
 								"partial_sequence": "",
 								"register": "\"",
 								"sequence": "",
-								"xpos": 0
+								"xpos": 14
 							}
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/C/dev/git/tubecalc/code/ig_util.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1069,
-								1069
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"_vintageous_non_interactive": false,
-								"_vintageous_processing_notation": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 1134.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/C/dev/git/tubecalc/code/ig_tokenizer.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2790,
-								2790
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"vintage":
-							{
-								"_vintageous_glue_until_normal_mode": false,
-								"action": null,
-								"action_count": "",
-								"mode": "mode_normal",
-								"motion": null,
-								"motion_count": "",
-								"must_capture_register_name": false,
-								"normal_insert_count": "1",
-								"partial_sequence": "",
-								"register": "\"",
-								"sequence": "",
-								"xpos": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 4140.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
+					"stack_index": 0,
 					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -850,7 +570,7 @@
 		"cols":
 		[
 			0.0,
-			0.357751677328,
+			0.250730374723,
 			1.0
 		],
 		"rows":
@@ -1203,14 +923,14 @@
 		"_vintageous_reset_during_init": true,
 		"vintage":
 		{
-			"_cmdline_cd": "C:\\dev\\git\\tubecalc\\code"
+			"_cmdline_cd": "C:\\Program Files\\Sublime Text 3"
 		}
 	},
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 114.0,
+	"side_bar_width": 150.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
